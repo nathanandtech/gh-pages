@@ -16,15 +16,18 @@
         </author>
         <link href="https://nathanbunn.com/another-blogging-tool.html"/>
         <id>https://nathanbunn.com/another-blogging-tool.html</id>
+            <category term="Software"/>
 
-        <updated>2020-07-19T07:34:42+08:00</updated>
+        <updated>2020-07-19T07:37:46+08:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://nathanbunn.com/media/posts/1/publii-cms.png" alt="" />
                      So I tried Jekyll and loved the static site idea, but i want some sort of CMS to make managing the content a bit more easy to remember. Adding images especially could be improved quite a bit!&nbsp; First I tried Hugo and Forestry, but&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <img src="https://nathanbunn.com/media/posts/1/publii-cms.png" alt="" />
                 
   <p>
     So I tried Jekyll and loved the static site idea, but i want some sort of CMS to make managing the content a bit more easy to remember. Adding images especially could be improved quite a bit!&nbsp;
