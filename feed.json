@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "nathanandtech",
+    "description": "",
+    "home_page_url": "https://nathanbunn.com",
+    "feed_url": "https://nathanbunn.com/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Nathan"
+    },
+    "items": [
+        {
+            "id": "https://nathanbunn.com/another-blogging-tool.html",
+            "url": "https://nathanbunn.com/another-blogging-tool.html",
+            "title": "Another Blogging Tool....",
+            "summary": " So I tried Jekyll and loved the static site idea, but i want some sort of CMS to make managing the content a bit more easy to remember. Adding images especially could be improved quite a bit!&nbsp; First I tried Hugo and Forestry, but&hellip;",
+            "content_html": "\n  <p>\n    So I tried Jekyll and loved the static site idea, but i want some sort of CMS to make managing the content a bit more easy to remember. Adding images especially could be improved quite a bit!&nbsp;\n  </p>\n\n  <p>\n    First I tried Hugo and Forestry, but the paid for limits seemed worrying, i want something that lasts, so i kept searching for something open source and easy to use. I have been burnt by Microsoft Lightswitch before!\n  </p>\n\n    <figure class=\"post__image post__image--center\">\n      <img loading=\"lazy\" src=\"https://nathanbunn.com/media/posts/1/hugo-github-forestry.jpg\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nathanbunn.com/media/posts/1/responsive/hugo-github-forestry-xs.jpg 300w ,https://nathanbunn.com/media/posts/1/responsive/hugo-github-forestry-sm.jpg 480w ,https://nathanbunn.com/media/posts/1/responsive/hugo-github-forestry-md.jpg 768w ,https://nathanbunn.com/media/posts/1/responsive/hugo-github-forestry-lg.jpg 1024w ,https://nathanbunn.com/media/posts/1/responsive/hugo-github-forestry-xl.jpg 1360w ,https://nathanbunn.com/media/posts/1/responsive/hugo-github-forestry-2xl.jpg 1600w\"  height=\"293\" width=\"755\" alt=\"\" />\n      \n    </figure>\n\n  <p>\n    This time I am trying Publii and so far so good.&nbsp;\n  </p>\n\n  <div  class=\"gallery-wrapper gallery-wrapper--center\">\n    <div class=\"gallery\" data-columns=\"3\">\n      <figure class=\"gallery__item\">\n      <a href=\"https://nathanbunn.com/media/posts/1/gallery/publii-cms.png\" data-size=\"1200x630\">\n        <img loading=\"lazy\" src=\"https://nathanbunn.com/media/posts/1/gallery/publii-cms-thumbnail.png\" height=\"378\" width=\"720\" alt=\"\" />\n      </a>\n      \n    </figure><figure class=\"gallery__item\">\n      <a href=\"https://nathanbunn.com/media/posts/1/gallery/publii-illustration_teaser.webp\" data-size=\"200x150\">\n        <img loading=\"lazy\" src=\"https://nathanbunn.com/media/posts/1/gallery/publii-illustration_teaser.webp\" height=\"150\" width=\"200\" alt=\"\" />\n      </a>\n      \n    </figure>\n    </div>\n  </div>\n\n  <p>\n    Hopefully alot more to come. Including porting my old posts over.\n  </p>",
+            "author": {
+                "name": "Nathan"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-07-19T07:34:42+08:00",
+            "date_modified": "2020-07-19T07:34:42+08:00"
+        }
+    ]
+}
