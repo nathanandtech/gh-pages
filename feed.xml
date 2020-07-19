@@ -18,7 +18,7 @@
         <id>https://nathanbunn.com/another-blogging-tool.html</id>
             <category term="Software"/>
 
-        <updated>2020-07-19T07:37:46+08:00</updated>
+        <updated>2020-07-19T19:03:03+08:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://nathanbunn.com/media/posts/1/publii-cms.png" alt="" />
@@ -65,6 +65,206 @@
   <p>
     Hopefully alot more to come. Including porting my old posts over.
   </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>A portable EGPU box</title>
+        <author>
+            <name>Nathan</name>
+        </author>
+        <link href="https://nathanbunn.com/a-portable-egpu-box.html"/>
+        <id>https://nathanbunn.com/a-portable-egpu-box.html</id>
+
+        <updated>2020-07-19T19:03:03+08:00</updated>
+            <summary>
+                <![CDATA[
+                     I often travel between countries and wanted a small and light EGPU to take with me. Since I often travel to the same places I decided the best way was to use an external power brick. (The xbox 360 power brick) as a standard&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    I often travel between countries and wanted a small and light EGPU to take with me. Since I often travel to the same places I decided the best way was to use an external power brick. (The xbox 360 power brick) as a standard PSU I can have multiples of. Especially as they are dirt cheap now.<br><br>I then wanted a plastic cased (for maximum baggage allowance on flights) EGPU. Ideally without breaking the bank.<br><br>I settled on a Akitio Thunder 3, which I promptly removed from its case.<br><br>I soldered a wire on to the power input, and wired this inline with the meaty 12V supply to the graphics card.<br><br>The card I chose should pull 100Wish under load, with peaks at 150W. I chose a 203W xbox PSU, and tried a 150W one with similar success with even less weight.<br><br>I planned to print a cover, however it worked fine without it, and it gave maximum heat dissipation.<br><br>One problem I faced was occasionally the card would disconnect under load, which I thought was power related, however eventually I found that the ground wire was wired far from the +12V rail, and also since it had such a huge heatsink had not flowed properly when soldering, and so wasn't making a good connection.<br><br>I fixed this by using a big soldering iron to get it flowed on really well.<br><br>For the 3D files to recreate this please see https://www.thingiverse.com/thing:3534658<br>
+  </p>
+
+  <div  class="gallery-wrapper gallery-wrapper--center">
+    <div class="gallery" data-columns="3">
+      <figure class="gallery__item">
+      <a href="https://nathanbunn.com/media/posts/6/gallery/EGPU-1.jpg" data-size="1024x768">
+        <img loading="lazy" src="https://nathanbunn.com/media/posts/6/gallery/EGPU-1-thumbnail.jpg" height="540" width="720" alt="" />
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://nathanbunn.com/media/posts/6/gallery/EGPU-2.jpg" data-size="576x768">
+        <img loading="lazy" src="https://nathanbunn.com/media/posts/6/gallery/EGPU-2-thumbnail.jpg" height="768" width="576" alt="" />
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://nathanbunn.com/media/posts/6/gallery/EGPU-3.jpg" data-size="1024x768">
+        <img loading="lazy" src="https://nathanbunn.com/media/posts/6/gallery/EGPU-3-thumbnail.jpg" height="540" width="720" alt="" />
+      </a>
+      
+    </figure>
+    </div>
+  </div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Unlocking the bios whitelist and advanced menu on my x230, w530 and Lenovo X1 carbon 2014</title>
+        <author>
+            <name>Nathan</name>
+        </author>
+        <link href="https://nathanbunn.com/unlocking-the-bios-whitelist-and-advanced-menu-on-my-x230-w530-and-lenovo-x1-carbon-2014.html"/>
+        <id>https://nathanbunn.com/unlocking-the-bios-whitelist-and-advanced-menu-on-my-x230-w530-and-lenovo-x1-carbon-2014.html</id>
+
+        <updated>2020-07-19T19:03:03+08:00</updated>
+            <summary>
+                <![CDATA[
+                     I wanted to experiment with a hackintosh, and had a few older lenovo laptops lying around. I bought a wifi card supported by OSX, but couldn't get it to recognise the card, the bios has a built in whitelist. I found a website bios-mods&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    I wanted to experiment with a hackintosh, and had a few older lenovo laptops lying around. I bought a wifi card supported by OSX, but couldn't get it to recognise the card, the bios has a built in whitelist. <br>I found a website bios-mods however there was no guide, only a member asking for 'donations' for helping you out.<br><br>First dissemble the laptops, and find the bios chip. For the X230 this is under the palm rest, for X1 its on the back of the motherboard, and the w530 needs to be completely stripped down, as its under a metal support under the palmrest, so the whole motherboard must be removed. <br><br>You also need a SPI reader, i recommend the ch341a programmer and a linux machine, but a raspberry pi also works. A SOIC 8 clip will make this much easier. <br><br>(For a more complete guide see https://www.win-raid.com/t4287f16-GUIDE-The-Beginners-Guide-to-Using-a-CH-A-SPI-Programmer-Flasher-With-Pictures.html)<br><br>Dump the  BIOS with flashrom (sudo apt-get install flashrom) in Linux with command: <br><br>	sudo flashrom --programmer ch341a_spi -r backup.rom<br>    <br>Do three dumps, then <br><br>	md5sum *<br>    <br>and ensure the hash of all three dumps are identical. If not, adjust your clip until they are. <br>Once they all match and you are sure you got a clean dump. <br>Copy a single dump to a windows machine and open SLIC mod 2.66.<br><br>Make a copy of your original bios in a folder called ‘modded’, and then open the copy with SLIC MOD. Wait for it to dump the file, it will take some time.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/8/1.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/8/responsive/1-xs.png 300w ,https://nathanbunn.com/media/posts/8/responsive/1-sm.png 480w ,https://nathanbunn.com/media/posts/8/responsive/1-md.png 768w ,https://nathanbunn.com/media/posts/8/responsive/1-lg.png 1024w ,https://nathanbunn.com/media/posts/8/responsive/1-xl.png 1360w ,https://nathanbunn.com/media/posts/8/responsive/1-2xl.png 1600w"  height="693" width="465" alt="" />
+      
+    </figure>
+
+  <p>
+    <br><br>When it finishes close the Pubkey prompt, and press structure, wait again.<br><br>
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/8/2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/8/responsive/2-xs.png 300w ,https://nathanbunn.com/media/posts/8/responsive/2-sm.png 480w ,https://nathanbunn.com/media/posts/8/responsive/2-md.png 768w ,https://nathanbunn.com/media/posts/8/responsive/2-lg.png 1024w ,https://nathanbunn.com/media/posts/8/responsive/2-xl.png 1360w ,https://nathanbunn.com/media/posts/8/responsive/2-2xl.png 1600w"  height="316" width="498" alt="" />
+      
+    </figure>
+
+  <p>
+    Expand the options until you find the file we need to replace.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/8/3.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/8/responsive/3-xs.png 300w ,https://nathanbunn.com/media/posts/8/responsive/3-sm.png 480w ,https://nathanbunn.com/media/posts/8/responsive/3-md.png 768w ,https://nathanbunn.com/media/posts/8/responsive/3-lg.png 1024w ,https://nathanbunn.com/media/posts/8/responsive/3-xl.png 1360w ,https://nathanbunn.com/media/posts/8/responsive/3-2xl.png 1600w"  height="550" width="666" alt="" />
+      
+    </figure>
+
+  <p>
+    &nbsp;&nbsp;<br>Scroll down in this window until…
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/8/4.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/8/responsive/4-xs.png 300w ,https://nathanbunn.com/media/posts/8/responsive/4-sm.png 480w ,https://nathanbunn.com/media/posts/8/responsive/4-md.png 768w ,https://nathanbunn.com/media/posts/8/responsive/4-lg.png 1024w ,https://nathanbunn.com/media/posts/8/responsive/4-xl.png 1360w ,https://nathanbunn.com/media/posts/8/responsive/4-2xl.png 1600w"  height="547" width="939" alt="" />
+      
+    </figure>
+
+  <p>
+    <br>Then expand this out and select “PE32+ image section”. Then click replace. <br>Browse to the copy of 79E0EDD7-9D1D-4F41-AE1A-F896169E5216.MOD provided by the “x230 2.62 G2ETA2WW PATCHED BY BDMASTER” folder. Then click OK.<br><br>This takes a while. It may show an error about module count, but it still patches the file. Press exit, and save if prompted. <br><br>Now in your ‘modded’ folder, is a backup copy of your bios, with OLD appended. And a version with our mod. <br>Now transfer this back to the linux machine, I then did the same three ready and md5sum process as before to ensure I had a good fit with my SOIC8 clip, and flash it with <br><br>	sudo flashrom --programmer ch341a_spi -w mod.rom<br><br>Then remove the test clip, and see if it worked. If not, you can flash back to any of the three copies you originally made to recover, and try again!<br>
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Nintendo Switch EMMC nand upgrade guide</title>
+        <author>
+            <name>Nathan</name>
+        </author>
+        <link href="https://nathanbunn.com/nintendo-switch-emmc-nand-upgrade-guide.html"/>
+        <id>https://nathanbunn.com/nintendo-switch-emmc-nand-upgrade-guide.html</id>
+
+        <updated>2020-07-19T19:03:03+08:00</updated>
+            <summary>
+                <![CDATA[
+                     First, Thanks to Paul for all his help and patience and the [guide](http://pascoe.pw/2018/09/switchnand.html) this is based and thanks to bnstemp from http://bbs.duowan.com/forum.php?mod=viewthread&amp;tid=46505080&amp;from=singlemessage for his additional work. Paul's guide did a great job on the hardware side, and in fact I ended up sending off&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    First, Thanks to Paul for all his help and patience and the [guide](http://pascoe.pw/2018/09/switchnand.html) this is based and thanks to bnstemp from http://bbs.duowan.com/forum.php?mod=viewthread&amp;tid=46505080&amp;from=singlemessage for his additional work.<br><br>Paul's guide did a great job on the hardware side, and in fact I ended up sending off to a pro to get the EMMC chipped switched over, so I wont go over that here. I will start this guide presuming you have a 256 EMMC already soldered onto your replacement daughter board. <br><br>The 256GB chip I used is a sandisk model,sold as [SDINBDA4-256G](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.516f2e8d0fx1dW&amp;id=582577399024&amp;_u=320k5lp00340)<br>This was the only one I could find in stock, in single chip amounts.<br><br>I will also presume you understand switch CFM, RCM, payload sending etc, and have a working hekate SD card. There are great switch CFW setup guides out there already if not so I suggest you read them. <br>I will also assume basic Linux Knowledge, I won't go over making a Ubuntu Live USB, etc, but trust Google to help if anyone gets stuck.<br><br>## Preparation<br><br>The first thing you need to do is make a full backup of your current EMMC. Boot into Hekate, and under tools - backup boot0/1 and raw nand onto your micro SD card. I recommend a 64GB+ micro SD here, so you get a nice single backup file, with plenty of space. <br>You will also need to get your bis_key_03. This is a console specific key which you can get use lockpick, or biskeydump.bin from RCM mode and then opening the prod.keys file or similar on your PC. <br>You need this to read the switch user partition from windows later on. <br><br>## Hardware<br><br>Open your switch, i followed the iFixit guide. Remove the back, then the SD card reader, and then the shiny metal shield under it, then you need simply need to use a plastic prying tool to lift up the EMMC board, careful as there is double sided tape holding it down, and replace it with your new board. I replaced the double sided tape too just incase. <br><br>Then put your switch back together again, following the iFixit guide in reverse.<br><br>## Software<br><br>Once you have it all back together, then boot Johns custom version of [hakate](http://pascoe.pw/2018/09/no-backup-sizecheck-hekate.bin), linked in the above guide, and under show hardware, check that EMMC is detected. This makes sure your soldering was good and the EMMC is working. <br><br>Now remove your SD card and put it in your PC, copy boot0,1 and rawnand.bin into the backup/xxxx/restore folder. where xxxx is a random folder name for your switch.<br><br>The put the SD card back into the switch, and go to tools, restore, and restore boot0/1 and then restore rawnand.bin. This will take a while to copy over and then verify, get a cup of tea and come back later.<br><br>Once this process is finished, you can shutdown your switch, then try booting normally. You should be able to load into the switch system, and all your data should be there, however the disk will still only show 26GB, like before, we need to expand the partition to fill the new drive. <br>However since the drive is encrypted, we cannot just wipe it and remake it, we need to both expand the partition, and then format the partition inside the encryption to get the switch to see the new extended size. <br><br>For this process you need a linux PC/linux USB bootdisk (ubuntu recommended), and then a windows PC to open the encrypted partition and format it to FAT32.<br>You will also need the [memloader](https://switchtools.sshnuke.net/) payload, to make the switch emmc be seen over USB by the PC, and also later on hacdiskmount from the same site for windows.<br><br>First send the memloader payload to your switch as you normally would, the switch will show some text and offer options of what to mount. <br><br>## On a Linux Machine.<br><br>Now boot into Linux, and open a root terminal. At the terminal type<br><br>	fdisk -l<br><br>to list all connected hardrives and storage media. Make a note of the letters available, /dev/sda, /dev/sdb etc.<br><br>Next connect your switch to the linux PC via USB, and using the volume keys on the switch highlight the EMMC option and press the power button to select and mount the EMMC partition on the linux machine. <br><br>Now run fdisk -l again to show all the hardrives connected to your PC, and notice which one of the same size as your new drive, was not there before. This is the drive you are working on, be very careful to get this right, as any mistake here can cause irreparable damage to your windows install. <br>You are looking for the drive with 11 partitions, the first 9 being small, then one 2.5GB, then the final 11th being 26GB. All of type unknown. <br>See a copy of my partition layout for the switch EMMC below.<br><br>	Disk /dev/sdb: 233 GiB, 250148290560 bytes, 488570880 sectors<br>	Units: sectors of 1 * 512 = 512 bytes<br>	Sector size (logical/physical): 512 bytes / 512 bytes<br>	I/O size (minimum/optimal): 512 bytes / 512 bytes<br>	Disklabel type: gpt<br>	Disk identifier: EDD7049E-B2D3-4067-B3D9-E5A8F398258F<br>	<br>	Device       Start      End  Sectors  Size Type<br>	/dev/sdb1       34     8191     8158    4M unknown<br>	/dev/sdb2     8192    16383     8192    4M unknown<br>	/dev/sdb3    16384    32767    16384    8M unknown<br>	/dev/sdb4    32768    49151    16384    8M unknown<br>	/dev/sdb5    49152    65535    16384    8M unknown<br>	/dev/sdb6    65536    81919    16384    8M unknown<br>	/dev/sdb7    81920    98303    16384    8M unknown<br>	/dev/sdb8    98304   114687    16384    8M unknown<br>	/dev/sdb9   114688   245759   131072   64M unknown<br>	/dev/sdb10  245760  5488639  5242880  2.5G unknown<br>	/dev/sdb11 5488640 60014591 54525952   26G unknown<br><br>For me this was /dev/sdb, for the rest of the guide i will write /dev/sdX to remind you to substitute whichever drive letter your switch was assigned.<br><br>	gdisk /dev/sdx <br><br>this opens the gdisk application, and points it at your switch emmc. If you are offered the chance to correct the start position of the drive or the partition table, press y to accept. <br><br>	i 11<br><br>Type i, enter, then 11 to show the information for the 11th partition on the drive. Including the GUID, and the unique GUID, we need to mirror all these fields exactly later. <br>Copy all this information into a text editor for easier copy and pasting later.<br><br>Mine looked like this:<br><br>	Partition number (1-11): 11<br>	Partition GUID code: 2B777F63-E842-47AF-94C4-25A7F18B2280 (Unknown)<br>	Partition unique GUID: 5561E2C3-9B40-4D90-A546-20EB6C0151FC<br>	First sector: 5488640 (at 2.6 GiB)<br>	Last sector: 60014591 (at 28.6 GiB)<br>	Partition size: 54525952 sectors (26.0 GiB)<br>	Attribute flags: 0000000000000001<br>	Partition name: 'USER'<br><br>Next we need to delete the 11th partition, the user partition, don't worry, this wont delete the data underneath (although remember you also have the backup of your nand anyway incase something goes wrong).<br>In gdisk with your switch nand selected type:<br><br>	d 11<br><br>to delete the partition. Then write these changes to the disk with<br><br>	w<br><br>you will see the following warning:<br>"Warning! Secondary header is placed too early on the disk! Do you want to<br>correct this problem? (Y/N):"<br>Enter y, then y again on the final check to write those changes to the disk.<br><br>We now need to refresh the partition layout with kpartx, so enter<br><br>	kpartx /dev/sdX<br><br>which will refresh the partition layout, updating it with the new changes in size and layout. <br><br>Now re-enter gdisk, making sure to specify the switch emmc from before. <br><br>	gdisk /dev/sdX<br><br>Now create a new partition, in the exact same place as the one we just deleted, <br><br>	Command (? for help): n<br><br>the tool will automatically use partition 11, and accept the default for start and end location, noting that the end location is now your new disk size, 6xxxxxx for 64gb, 11xxxxx for 128gb and 24xxxxxx for 240GB.<br><br>When prompted for the partition type, copy and paste the partition GUID we made a note of earlier. (not the one labeled unique GUID). The one that ends in (UNKNOWN). For me that was Partition GUID code: 2B777F63-E842-47AF-94C4-25A7F18B2280 (Unknown)<br><br>Now the new partition is created, we need to change the partitions unique GUID code back to the same as it was before, so the switch knows which partition to use. <br>We do this by typing <br><br>	x c 11<br><br>x, to enter advanced mode, c for change partition GUID, and 11 for the USER partition we are working with. <br>The prompt will change to<br><br>	Enter the partition's new unique GUID ('R' to randomize):<br>    <br>and here we enter the unique GUID for the partition that we made a note of before. ( for me it is 'Partition unique GUID: 5561E2C3-9B40-4D90-A546-20EB6C0151FC')<br><br>We also need to set the partition name, so press m for the main menu<br><br>	m<br><br>then c for change partition name, 11 for the partition to change, and then  set the name to USER in capital letters.<br><br>	c 11 <br>    USER<br>    <br>Finally we need to set the attributes for the partition, to set it back to system so that the switch won't notice we were here. <br>x for advanced, then a for attributes, and 11 to chose the partition, and then toggle attribute 0 to set the partition to system.<br><br>	Expert command (? for help): a<br>	Partition number (1-11): 11<br>	Known attributes are:<br>	0: system partition<br>	1: hide from EFI<br>	2: legacy BIOS bootable<br>	60: read-only<br>	62: hidden<br>	63: do not automount<br><br>	Attribute value is 0000000000000000. Set fields are:<br>  		No fields set<br><br>	Toggle which attribute field (0-63, 64 or <enter> to exit): 0<br>	Have enabled the 'system partition' attribute.<br>	Attribute value is 0000000000000001. Set fields are:<br>	0 (system partition)<br>  <br>	Toggle which attribute field (0-63, 64 or <enter> to exit): <br>    <br>press enter to exit.<br><br>We are all done here, but finally we can print the partition information again with<br><br>	i 11<br>    <br>and compare this with the values we saw originally, it should be identical except for the lat sector and partition size fields, which should represent the new size. If any of these are different go back now and double check your work until they match exactly.<br>Once you are done enter w to write, and y that you are sure.<br><br>	w y<br><br>Now you can unplug your switch, press the power button for 5 seconds to exit memloader and then press the power button to boot your switch. <br>It should boot normally into the switch OS, with all your saves and content preserved from before.<br>##If at this point you have any errors, or the switch won't boot, go back and try the steps again right from restore your rawnand.bin, as if it wont boot correctly now, the next steps won't fix that.<br><br>Now we need access to a windows PC with HacDiskMount and fat32format.exe. <br><br>## On a windows PC.<br><br>Shutdown your switch and reboot to RCM mode. Push the memloader payload again, connect the cable to your windows PC, and using volume and power mount the EMMC partition over USB.<br><br>In windows open HacDiskMount as administrator, click file and open physical drive. Choose your switch drive, ignore the error that it does not seem like a full emmc dump. <br>You should see the 11 partitions listed here, click the USER partition we just remade, and you will see a prompt for encryption keys. <br>Take the bis_key_03 value from your prod.keys that you dumped earlier, and enter the left half on the top line, and the right half on the line below, then click test. You should see a message that the was successful and the encryption was opened. <br>If you do not get a success message stop now, and double check/redump your prod.keys. If you continue without opening the encryption you lose all your switch data. <br><br>Once the keys are verified, install the driver, and mount the drive to an empty drive letter. In this example i will use the G: drive.<br><br>Open windows explorer and copy all the files from the G drive onto your local machine, this is a backup of your saves and settings, do not lose this.<br><br>Now we need to go to the location where fat32format.exe is located, run an administrator prompt and enter <br>	fat32format.exe G:<br><br>This will wipe your switch user partition and reformat it, using the new partition data we created to give us the full size of the new USER partition. <br>Once this finished we now should see the new EMMC size in windows explorer for the G drive, and we can copy back our backup of the saves and settings we made before the format. This copy is slow, and if it fails I recommend deleting all the files and re-copying folder by folder until it completes successfully.<br><br>Wait 30 seconds for any background file transfers to complete, then in HacDiskMount unmount the drive, and after a few seconds disconnect your switch.<br><br>Hold the power button on your switch for 5 seconds to exit memloader, then cross your fingers and press the power button, the switch should boot up normally, but in the settings menu, show your new EMMC size. Success!<br>If you get a black nintendo error screen, go back to the rawnand.bin stage and start the whole process again, it may take a couple of tries for the stars to align and every step to go flawlessly.<br><br>Enjoy your new switch storage space!<br><br></enter></enter>
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/5/250done-2.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/5/responsive/250done-2-xs.jpg 300w ,https://nathanbunn.com/media/posts/5/responsive/250done-2-sm.jpg 480w ,https://nathanbunn.com/media/posts/5/responsive/250done-2-md.jpg 768w ,https://nathanbunn.com/media/posts/5/responsive/250done-2-lg.jpg 1024w ,https://nathanbunn.com/media/posts/5/responsive/250done-2-xl.jpg 1360w ,https://nathanbunn.com/media/posts/5/responsive/250done-2-2xl.jpg 1600w"  height="3120" width="4160" alt="" />
+      
+    </figure>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Switch to 256</title>
+        <author>
+            <name>Nathan</name>
+        </author>
+        <link href="https://nathanbunn.com/switch-to-256.html"/>
+        <id>https://nathanbunn.com/switch-to-256.html</id>
+
+        <updated>2020-07-19T19:03:03+08:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://nathanbunn.com/media/posts/4/250done-2.jpg" alt="" />
+                     After re-imaging and expanding the switch nand at least 10 times during the dance to get the switch to see the larger 128GB nand I eventually got it working, but didnt make a note of exactly how I got it to work, damnit! I&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://nathanbunn.com/media/posts/4/250done-2.jpg" alt="" />
+                
+  <p>
+    After re-imaging and expanding the switch nand at least 10 times during the dance to get the switch to see the larger 128GB nand I eventually got it working, but didnt make a note of exactly how I got it to work, damnit! I had to do it again to make some better instructions, and if I had to do it again, I may as well go large, as large as I can find, 256GB! <br><br>I dissasembled the switch again, (Thanks iFixit again!), swapped the EMMC board, put it back together and crossed my fingers. <br>Booting into Hekate (the one modified by John to restore to larger EMMCs), the EMMC was seen properly by the switch, success! <br>
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/4/250seen.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/4/responsive/250seen-xs.jpg 300w ,https://nathanbunn.com/media/posts/4/responsive/250seen-sm.jpg 480w ,https://nathanbunn.com/media/posts/4/responsive/250seen-md.jpg 768w ,https://nathanbunn.com/media/posts/4/responsive/250seen-lg.jpg 1024w ,https://nathanbunn.com/media/posts/4/responsive/250seen-xl.jpg 1360w ,https://nathanbunn.com/media/posts/4/responsive/250seen-2xl.jpg 1600w"  height="3120" width="4160" alt="" />
+      
+    </figure>
+
+  <p>
+    <br>Now to get the old data copied over and enlarged. <br><br>I restored the boot0/1 backup and rawnand I used last time. (lucky I backed up my savegames before removing the 128gb). <br><br>I then followed the same process as before, this time using only gdisk, as I was pretty sure that gparted was messing with the process. After the partition resize in linux, it booted up, a good sign! <br>I mounted the emmc on windows with HacDiskMount and reformated the partition underneath with the command line tool fat32format. I copied back the data and rebooted.. Success! 256GB Switch upgrade worked first time! <br><br>I documented the steps and so will make a standalone guide post of the exact commands and process to extend the Switch NAND to help others down the path to upgarded switch heaven!<br><br>
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/4/250done.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/4/responsive/250done-xs.jpg 300w ,https://nathanbunn.com/media/posts/4/responsive/250done-sm.jpg 480w ,https://nathanbunn.com/media/posts/4/responsive/250done-md.jpg 768w ,https://nathanbunn.com/media/posts/4/responsive/250done-lg.jpg 1024w ,https://nathanbunn.com/media/posts/4/responsive/250done-xl.jpg 1360w ,https://nathanbunn.com/media/posts/4/responsive/250done-2xl.jpg 1600w"  height="3120" width="4160" alt="" />
+      
+    </figure>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Upgrading my switch EMMC to 128GB</title>
+        <author>
+            <name>Nathan</name>
+        </author>
+        <link href="https://nathanbunn.com/upgrading-my-switch-emmc-to-128gb.html"/>
+        <id>https://nathanbunn.com/upgrading-my-switch-emmc-to-128gb.html</id>
+
+        <updated>2020-07-19T19:03:03+08:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://nathanbunn.com/media/posts/3/128gbdone-2.jpg" alt="" />
+                     I saw guides online for upgrading the switch NAND, first on gbatemp and reddit, which linked to John Pascoe here: http://pascoe.pw/2018/09/switchnand.html and he quotes http://bbs.duowan.com/forum.php?mod=viewthread&amp;tid=46505080&amp;from=singlemessage After reading through I convinced myself to give it a try. I first bought a few blank USB pendrives&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://nathanbunn.com/media/posts/3/128gbdone-2.jpg" alt="" />
+                
+  <p>
+    I saw guides online for upgrading the switch NAND, first on gbatemp and reddit, which linked to John Pascoe here: http://pascoe.pw/2018/09/switchnand.html and he quotes http://bbs.duowan.com/forum.php?mod=viewthread&amp;tid=46505080&amp;from=singlemessage<br>After reading through I convinced myself to give it a try. <br>I first bought a few blank USB pendrives and EMMC chips from taobao, pre-balled, so that I could try to teach myself how to solder BGA chips with hot air, this also needed a hot air re-work station, so i bought one of those too from Taobao, 50 dollars lighter and with a small stack of dead USB boards I realised that I wouldn't have the nerve to do an expensive EMMC board, so whilst carrying on my expirements on cheap boards, I sent a 128gb chip, the  Samsung KLMDG8JENB-B041 linked below, along with a replacement Switch EMMC board, to a professional to be reworked.<br>https://item.taobao.com/item.htm?id=537061791727&amp;_u=u20k5lp07285<br><br>I got the board back, backed up my switch, dissassembled the switch (thanks iFixit!), swapped the EMMC boards, keeping my orginal untouched CFW. This means as long as I never go online (delete all the wifi connections), I can always just switch the EMMC back in and it will be as if I never ran any CFW. <br>After using Paul's modified restore tool with the backup size check removed, I had the Switch booting back up perfectly with the bigger EMMC, however the switch wouldn't see the new size until I extended the size of the partition, but inside the encryption. This was very tricky to do, and I didn't find either of the above links to be entirely complete as to how it was done. <br><br>I eventually managed to get it booting, and so had a 128GB switch booting and working perfectly! <br>As soon as it was working and booting I had a check online and found a Samsung SDINBDA4-256G 256GB module for sale. <br>https://item.taobao.com/item.htm?id=582577399024&amp;_u=u20k5lp0e05b<br><br>I ordered one, and kept testing the 128gb whilst I waited for the shipping to me, then sent it off to the same company to get it soldered by someone a bit more experienced. <br><br>For now, 128gb Switch success!
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://nathanbunn.com/media/posts/3/128gbdone.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nathanbunn.com/media/posts/3/responsive/128gbdone-xs.jpg 300w ,https://nathanbunn.com/media/posts/3/responsive/128gbdone-sm.jpg 480w ,https://nathanbunn.com/media/posts/3/responsive/128gbdone-md.jpg 768w ,https://nathanbunn.com/media/posts/3/responsive/128gbdone-lg.jpg 1024w ,https://nathanbunn.com/media/posts/3/responsive/128gbdone-xl.jpg 1360w ,https://nathanbunn.com/media/posts/3/responsive/128gbdone-2xl.jpg 1600w"  height="3120" width="4160" alt="" />
+      
+    </figure>
             ]]>
         </content>
     </entry>
